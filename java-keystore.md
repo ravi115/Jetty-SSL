@@ -96,6 +96,8 @@
   - The certificate information inside the alias will be stored in the file specified with extension der.
           
           keytool -exportcert -alias <alias_name> -file <any_file_name>.der -keystore <keystore_name>.jks
+          or
+          keytool -exportcert -alias <alias_name> -file <any_file_name>.crt -keystore <keystore_name>.jks
          
 
 #### Modifying Keystore
@@ -114,7 +116,11 @@
 
          e.g. : keytool -changealias -alias mykey1 -destalias myNewAliasName -keystore myNewKeystore1.jks
 
+**To check stand-alone certificate**
 
+          keytool -printcert -v -file <crt_file_name>.crt
+          e.r.: keytool -printcert -v -file mycrt.crt
+          
 
 
                 
