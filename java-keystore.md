@@ -6,6 +6,7 @@
   - The keystore entries are protected by keystore password.
   - A keystore entry is identified by an **alias**, and it consists of _keys_ and _certificates_ that form a trust chain.
   - The keystore file extension is .jks.
+  - Each certificate in a Java keystore is associated with a unique alias.
   - we generate a new key pair in new/existing keystore and using this key we can later generate a CSR and obtain an 
     SSL certificate for this CSR form a certificate authority (CA). 
 
@@ -50,7 +51,9 @@
            e.g.: keytool -importcert -trustcacerts -file mycrt.crt -alias mykey1 -keystore myNewKeystore1.jks
                  if anything goes wrong like if the private key won't match then below error message will be thrown.
                  keytool error: java.security.cert.CertificateParsingException: java.io.IOException: ObjectIdentifier() -- data isn't an object ID (tag = 49)
+   - Import a root or intermediate CA certificate to an existing Java keystore.
     
+            keytool -importcert -trustcacerts -file <certificate_name>.crt -alias root -keystore <existing_keystore_name>.jks      
     
 
 **Generate Self-Signed Certificate in New/Existing Keystore**
