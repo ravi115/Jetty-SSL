@@ -8,7 +8,13 @@
   - The keystore file extension is .jks.
   - Each certificate in a Java keystore is associated with a unique alias.
   - we generate a new key pair in new/existing keystore and using this key we can later generate a CSR and obtain an 
-    SSL certificate for this CSR form a certificate authority (CA). 
+    SSL certificate for this CSR form a certificate authority (CA).
+  - To generate OBF password: 
+  
+          java -cp jetty-util-9.2.11.v20150529.jar org.eclipse.jetty.util.security.Password <password>
+          
+  - This **jetty-util-9.2.11.v20150529.jar** package will be availabe in jetty/lib directory. 
+  
 
 #### List of instructions to generate a certificate or create a keystore.
 
